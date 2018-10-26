@@ -44,6 +44,8 @@ It's necessary to clone the Libmacgpg repository first, before building GPGMail.
 ```bash
 cd Dependencies
 git clone https://github.com/GPGTools/Libmacgpg.git
+# you need to install Libmacgpg, instruction from https://github.com/waleedsamy/Libmacgpg/blob/dev/Readme.md
+# high-sierra branch is compatibe with Libmacgpg dev branch (c9e82d52179)
 cd ..
 ```
 
@@ -53,9 +55,11 @@ make
 ```
 
 #### Install
-Copy Libmacgpg.framework from Dependencies/Libmacgpg/build/Release/ to ~/Library/Frameworks.
-
-After that copy the GPGMail.mailbundle file from build/Releases/GPGMail.mailbundle to ~/Libray/Mail/Bundles, re-start Mail.app and enjoy.
+```bash
+mkdir -p ~/Libray/Mail/Bundles
+cp -rp build/Release/GPGMail.mailbundle to ~/Libray/Mail/Bundles
+```
+Re-start Mail.app and you get 30 day trial again of gpgmail plugin (if recompling this package stop resitting the trial period, I'll remove the part about licence from code)
 
 
 System Requirements
